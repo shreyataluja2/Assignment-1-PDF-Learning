@@ -28,41 +28,26 @@ The NO₂ feature is selected because it is suitable for probability density est
 
 ## 🧪 Methodology
 
-### Step 1: Data Preprocessing
-- The dataset is loaded and cleaned.
-- Missing and invalid NO₂ values are removed.
-- The NO₂ column is extracted as the input variable x.
+### Step 1: Non-Linear Transformation
+The NO₂ values are transformed using a roll-number-based non-linear transformation:
 
----
-
-### Step 2: Non-Linear Transformation
-Each input value x is transformed into z using the roll-number-based transformation:
-
-z = x + aᵣ · arcsin(bᵣ · x)
+z = x + aᵣ · sin(bᵣ · x)
 
 where:
 - aᵣ = 0.05 × (r mod 7)
 - bᵣ = 0.3 × ((r mod 5) + 1)
 - r is 102313020
 
-This transformation introduces non-linearity and personalizes the data.
+This step introduces non-linearity and personalizes the data.
 
 ---
 
-### Step 3: Probability Density Function Learning
-The transformed variable z is modeled using the following PDF:
+### Step 2: Learning the Probability Density Function
+The transformed variable z is modeled using the following probability density function:
 
-p̂(z) = c · e^(−λ(z − μ)²)
+p̂(z) = c · e^(−λ (z − μ)²)
 
-where:
-- μ is the mean
-- λ controls the spread
-- c is the normalization constant
-
----
-
-### Step 4: Parameter Estimation
-The parameters μ, λ, and c are estimated from the transformed data using statistical methods. These parameters fully define the learned probability density function.
+The parameters μ (mean), λ (spread), and c (normalization constant) are estimated directly from the transformed data.
 
 ---
 
