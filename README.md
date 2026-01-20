@@ -79,29 +79,6 @@ The parameters μ, λ, and c are estimated from the transformed data using stati
 
 ---
 
-## 📈 Result Graphs
-
-### 1. Histogram of Transformed Data (z)
-This graph shows the distribution of the transformed values z.
-
-![Histogram of z](histogram_z.png)
-
----
-
-### 2. Learned Probability Density Function
-This graph shows the estimated PDF plotted over the transformed data.
-
-![PDF Curve](pdf_curve.png)
-
----
-
-### 3. Effect of Non-Linear Transformation
-This graph compares original NO₂ values with transformed values.
-
-![Transformation Effect](transformation_effect.png)
-
-
----
 
 ## 📊 Key Observations
 - The roll-number-based transformation personalizes the dataset.
